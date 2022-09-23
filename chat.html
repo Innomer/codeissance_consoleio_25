@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        /* messages */
+        .msgs {
+            width: 60%;
+            /* display: inline-block;
+            height: 100%; */
+            position: relative;
+            left: 40%;
+        }
+
+        img {
+            position: relative;
+            left: 50%;
+            padding: 0px 7px;
+        }
+
+        .userpic {
+            width: 50px;
+            border: 1px solid black;
+            position: relative;
+            left: 5%;
+
+        }
+
+        #username{
+            position: relative;
+            left: 7%;
+        }
+
+        .pmsg {
+            padding: 20px 10px;
+        }
+
+
+        /* personal msgs */
+
+        .personal-msg {
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container overflow-hidden m-5 ">
+        <div class="row gx-5">
+            <div class="col  ">
+                <div class="msgs p-3 border bg-light ">
+                    <span class="fw-bold">Messaging</span>
+                    <img src="./images/more.svg" alt="more">
+                    <img src="./images/edit.svg" alt="edit">
+
+                </div>
+                <div class="msgs p-3 border bg-light ">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search messages"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+
+                <div class="msgs p-3 border bg-light ">
+                    <img src="./images/user1.png" class="userpic rounded-circle " alt="user1">
+                    <span class="h6" id="username">Mann Bhanushali</span>
+                </div>
+
+            </div>
+            <div class="col ">
+                <div class="personal-msg p-3 border bg-light"><span id="username">Mann Bhanushali</span>
+                    <img src="./images/more.svg" alt="more">
+                    <img src="./images/video.svg" alt="video">
+                </div>
+                <div class=" p-3 border ">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
