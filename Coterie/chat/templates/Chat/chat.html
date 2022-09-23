@@ -44,9 +44,24 @@
 
         /* personal msgs */
 
-        .personal-msg {
-            width: 80%;
+        /* .personal-msg { */
+            /* width: 80%; */
+        /* } */
+
+        #message-send-button{
+            width: 30%;
         }
+        
+        #msg-container{
+            width: 50px;
+        }
+        .msg-hist{
+            display: inline-block;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+        
     </style>
 </head>
 
@@ -76,22 +91,25 @@
                 </div>
 
             </div>
-            <div class="col ">
+            <div class="col" id="msg-container">
                 <div class="personal-msg p-3 border bg-light"><span id="username">Mann Bhanushali</span>
                     <img src="{% static '/more.svg' %}" alt="more">
                     <img src="{% static '/video.svg' %}" alt="video">
                 </div>
-                <div class=" p-3 border " id="message-parent">
-                    <input type="text" id="message-box">
+                <div class="container-lg  msg-hist" id="message-parent">
                 </div>
-                <div>
-                    <button type="submit" class="form-control me-2" id="message-send-button">Send Message</button>
+                
+                <div class="input-group mb-3  p-3 border">
+                    <input type="text" class="form-control " placeholder="Write a message" aria-label="Recipient's username" aria-describedby="button-addon2" id="message-box">
                 </div>
+
+                <button type="submit" class="btn btn-light form-control me-2" id="message-send-button">Light</button>
+                
             </div>
         </div>
     </div>
 
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
     <script>
         const chatSocket=new WebSocket("ws://"+window.location.host+"/");
         chatSocket.onopen=function (e){
@@ -113,9 +131,14 @@
         chatSocket.onmessage=function(e){
             const data=JSON.parse(e.data);
             var div =document.createElement("div");
-            div.innerHTML=data.username + " : " + data.message;
-            document.querySelector('#message-box').value="";
+            div.innerHTML=data.username;
+            div.className="h6 d-flex flex-row";
             document.querySelector('#message-parent').appendChild(div);
+            var div2 =document.createElement("div");
+            div2.innerHTML=data.message;
+            div2.className="h5 d-flex flex-row";
+            document.querySelector('#message-parent').appendChild(div2);
+            document.querySelector('#message-box').value="";
         };
     </script>
 </body>

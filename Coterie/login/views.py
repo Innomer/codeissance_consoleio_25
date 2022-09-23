@@ -3,6 +3,8 @@ from .models import Profile
 from random import randint
 from django.shortcuts import render,redirect
 # Create your views here.
+
+from django.forms.models import model_to_dict
 token=0
 
 def Login(request):
@@ -14,7 +16,9 @@ def Login(request):
             if(prof.username==username):
                 if(prof.pw==password):
                     request.session['token']=prof.token
-                    return redirect('/profile')
+                    context['username']=username
+                    context['pw']=password
+                    return redirect("/profile/{}".format(int(prof.token)))
                 else:
                     context['no_record']=int(0)
             else:
@@ -37,10 +41,49 @@ def Register(request):
         prof.token=x
         prof.save()
         request.session['token']=x
-        return redirect('/profile')
+        return redirect('/profile/{}'.format(x))
     else:
         context['no_record']=int(0)
     return render(request,'LoginSignUp/signUp.html',context=context)
 
-def Chat(request):
-    return render(request,'Chat/chat.html')
+def Prof(request,id):
+    if id > 10000000:
+        prof=Profile.objects.filter(token=id).first()
+        info={'1':1}
+        if(prof):
+            info=model_to_dict(prof)
+        # return render(request,'Profile/profile.html',{'info':info})
+        abt=request.POST.get("About")
+        username=request.POST.get("Username")
+        fName=request.POST.get("fname")
+        ed=request.POST.get("Edu")
+        dt=request.POST.get("Date")
+        city=request.POST.get("City")
+        country=request.POST.get("Country")
+        career=request.POST.get("Career")
+        interests=request.POST.get("Interest")
+        pp=request.POST.get("img")
+        if pp:
+            pp='/'+pp
+        if interests:
+            interests=enumerate(interests,1)
+        community=request.POST.get("Community")
+        if community:
+            community=enumerate(community,1)
+        if id:
+            p=Profile.objects.filter(token=id)
+            p.username=username
+            p.fullname=fName
+            p.ed=ed
+            p.abt=abt
+            p.bday=dt
+            p.city=city
+            p.country=country
+            p.career=career
+            p.interest=interests
+            p.communities=community
+            p.pp=pp
+            info["ppp"]=pp
+            p.update()
+        print(info)
+    return render(request,'Profile/profile.html',{'info':info})
