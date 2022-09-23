@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -222,9 +223,13 @@
                     <label class="c" for="Career">Career</label>
                     <input name="Career" id="Career" class="profileDetailsText" type="text" value="{{info.career}}">
                     <label for="Interest">Interest</label>
-                    <input name="Interest" id="Interest" class="profileDetailsText" type="text">
+                    <input name="Interest1" id="Interest" class="profileDetailsText" type="text" value="{{info.interest1}}">
+                    <input name="Interest2" id="Interest" class="profileDetailsText" type="text" value="{{info.interest2}}">
+                    <input name="Interest3" id="Interest" class="profileDetailsText" type="text" value="{{info.interest3}}">
                     <label for="Community ">Community </label>
-                    <input name="Community" id="CommunityMember" class="profileDetailsText" type="text">
+                    <input name="Community1" id="CommunityMember" class="profileDetailsText" type="text" value="{{info.communities1}}">
+                    <input name="Community2" id="CommunityMember" class="profileDetailsText" type="text" value="{{info.communities2}}">
+                    <input name="Community3" id="CommunityMember" class="profileDetailsText" type="text" value="{{info.communities3}}}">
                 </div>
                 <button class="profile_submit" type="submit">Save Changes</button>
                 {% endif %}

@@ -53,7 +53,6 @@ def Prof(request,id):
         info={'1':1}
         if(prof):
             info=model_to_dict(prof)
-        # return render(request,'Profile/profile.html',{'info':info})
         abt=request.POST.get("About")
         username=request.POST.get("Username")
         fName=request.POST.get("fname")
@@ -64,6 +63,12 @@ def Prof(request,id):
         career=request.POST.get("Career")
         interests=request.POST.get("Interest")
         pp=request.POST.get("img")
+        i1=request.POST.get("Interest1")
+        i2=request.POST.get("Interest2")
+        i3=request.POST.get("Interest3")
+        c1=request.POST.get("Community1")
+        c2=request.POST.get("Community2")
+        c3=request.POST.get("Community3")
         if dt:
             if pp:
                 pp='/'+pp
@@ -73,7 +78,7 @@ def Prof(request,id):
             if community:
                 community=enumerate(community,1)
             if id:
-                p=Profile.objects.filter(token=id).first()
+                p=Profile.objects.filter(token=id).get()
                 p.username=username
                 p.fullname=fName
                 p.ed=ed
@@ -85,7 +90,16 @@ def Prof(request,id):
                 p.interest=interests
                 p.communities=community
                 p.pp=pp
+                p.interest1=i1
+                p.interest2=i2
+                p.interest3=i3
+                p.communities1=c1
+                p.communities2=c2
+                p.communities=c3
                 info["ppp"]=pp
                 p.save()
             print(info)
     return render(request,'Profile/profile.html',{'info':info})
+
+def Home(request):
+    return render(request,'home.html')

@@ -62,7 +62,7 @@
             flex-direction: column;
         }
         
-    </style>
+    </style>    
 </head>
 
 <body>
@@ -77,7 +77,7 @@
 
                 </div>
                 <div class="msgs p-3 border bg-light ">
-                    <form class="d-flex">
+                    <form class="d-flex" method="POST">
                         {% csrf_token %}
                         <input name="searchQuery" class="form-control me-2" type="search" placeholder="Search messages"
                             aria-label="Search">
@@ -86,16 +86,22 @@
                 </div>
 
                 <div class="msgs p-3 border bg-light ">
+                    {% if userActive %}
+                    {% for user in lst %}
                     <img src="{% static '/user1.png' %}" class="userpic rounded-circle " alt="user1">
-                    <span class="h6" id="username">Mann Bhanushali</span>
+                    <span class="h6" id="username">{{user.username}}</span><br><br>
+                    {% endfor %}
+                    {% endif %}
                 </div>
 
             </div>
             <div class="col" id="msg-container">
-                <div class="personal-msg p-3 border bg-light"><span id="username">Mann Bhanushali</span>
+                {% if u1 %}
+                <div class="personal-msg p-3 border bg-light"><span id="username">{{u1.username}}</span>
                     <img src="{% static '/more.svg' %}" alt="more">
                     <img src="{% static '/video.svg' %}" alt="video">
                 </div>
+                {% endif %}
                 <div class="container-lg  msg-hist" id="message-parent">
                 </div>
                 
@@ -111,7 +117,7 @@
 
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
     <script>
-        const chatSocket=new WebSocket("ws://"+window.location.host+"/");
+        const chatSocket=new WebSocket("ws://"+window.location.host+"/chat/"+{{room_name    }}+'/');
         chatSocket.onopen=function (e){
             console.log('The connection is established');
         };
@@ -126,7 +132,7 @@
         };
         document.querySelector('#message-send-button').onclick=function (e) {
             var messageInput=document.querySelector("#message-box").value;
-            chatSocket.send(JSON.stringify({message:messageInput,username:"{{request.user.username}}"}));
+            chatSocket.send(JSON.stringify({message:messageInput,username:"{{sname.username}}"}));
         };
         chatSocket.onmessage=function(e){
             const data=JSON.parse(e.data);
