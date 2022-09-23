@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSSEC</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        :root {
+            --vdpurple: #210f6d;
+            --dpurple: rgb(185, 149, 216);
+            --lipurple: rgb(88, 68, 221);
+            --vlipurple: #c4ddf3;
+        }
+
+        body {
+            color: white;
+        }
+
+        .navbar {
+            background-color: var(--vdpurple);
+        }
+
+        /* home pg */
+        .home {
+            height: 800px;
+        }
+
+        .row {
+            background-color: var(--vdpurple);
+            height: 70%;
+            padding: 50px;
+            line-height: 150%;
+            /* height: 80%; */
+
+        }
+
+        .col {
+            position: relative;
+            top: 50px;
+        }
+
+        .btn {
+            background-color: var(--dpurple);
+        }
+
+
+        .himg {
+            /* position: relative; */
+            /* left: 10px; */
+            display: flex;
+            justify-content: center;
+            size: 100%;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .container-fluid img {
+            width: 80px;
+        }
+
+        .info p {
+            line-height: 150%;
+        }
+
+        .navbar-brand{
+            position: relative;
+            right: 19px;
+        }
+
+        .login{
+            position: relative;
+            right: 10%;
+            width: 10%;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <img src="./images/logo.png" class="img-fluid " alt="logo">
+            <a class="navbar-brand text-white " href="#">Coterie</a>
+            <button class="navbar-toggler style='filter:invert(1);' type=" button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white px-4" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#">My Network</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#">Messaging</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#">Notifications</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn btn-light login mx-3">Sign Up</button>
+        <button type="button" class="btn btn-light login mx-3">Login</button>
+    </nav>
+
+    <div class="home container-fluid-md ">
+        <div class="row p-100 gx-30 ">
+            <div class="info col-12 col-md-6  w-55 d-print-inline-block h-100 p-50 ">
+                <h1>A new era for community builders. </h1>
+                <h1 class="mb-4">Join our movement.</h1>
+                <p class="fs-5 pb-4 ">
+                    Bring your people, memberships, and content together in your own fully-branded and private community
+                    platform. Sell courses, charge subscriptions, live stream and so much more. All without any social
+                    media limitations.
+                </p>
+                <a class="btn btn-primary w-50 mb-5" href="#" role="button">Get Started</a>
+            </div>
+            <div class="himg col-12 col-md-6  w-45 ">
+                <img src="./images/meetup.png" class="img-fluid " alt="meetup">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
