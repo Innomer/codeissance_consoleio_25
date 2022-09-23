@@ -1,4 +1,3 @@
-from statistics import mode
 from django.db import models
 
 # Create your models here.
@@ -17,3 +16,4 @@ class Profile(models.Model):
     streak=models.IntegerField(null=True)
     pw=models.CharField(max_length=16,blank=False,default='djangotest')
     email=models.EmailField(max_length=254,default="xyz")
+    token=models.IntegerField(null=True,blank=True)
