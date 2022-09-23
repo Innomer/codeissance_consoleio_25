@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <!-- <link rel="stylesheet" href="./signUp.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mainContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+
+        .sideImg {
+            margin-left: -9rem;
+            margin-top: -7rem;
+            opacity: 0.7;
+        }
+
+        .subMainContainer {
+            display: flex;
+            justify-content: space-evenly;
+            /* height: 26rem; */
+        }
+
+        .subMainContainer1 {
+            background-color: #c4ddf3;
+            /* background-color: #210f6d; */
+            width: 20rem;
+            position: relative;
+            /* padding: 5px; */
+        }
+
+        .subMainContainer2 {
+            background-color: #210f6d;
+            width: 20rem;
+        }
+
+        .subMainContainer__img {
+            width: 30rem;
+            height: 24rem;
+            margin-top: 1rem;
+        }
+
+        .form-box {
+            width: 16rem;
+            height: 20rem;
+            position: relative;
+            margin: 6% auto;
+            background: #fff;
+            padding: 5px;
+            /* overflow: hidden; */
+            margin-top: 2rem;
+        }
+
+        #btn {
+            margin-left: 2rem;
+            /* margin-top: 0.7rem; */
+            /* transition: .5s; */
+        }
+
+        /* #btn{
+    
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06); 
+    border-radius: 30px;
+    transition: .5s;
+} */
+
+        .button-box {
+            position: relative;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: transparent;
+            border-radius: 30px;
+            border: 0;
+            outline: none;
+            position: relative;
+            border-style: outset;
+        }
+
+
+
+        .input-group {
+            margin-top: 0.2rem;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+
+        .input-field {
+            width: 85%;
+            padding: 9px 0;
+            margin: 3px 0;
+            border-left: 0.5rem;
+            border-top: 0;
+            border-right: 0.5rem;
+            border-bottom: 1px solid #999;
+            outline: none;
+            /* background: transparent; */
+        }
+
+        .submitLogin {
+            margin-left: 5rem;
+            margin-top: 3rem;
+        }
+
+        .submit-btn {
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            border-style: none;
+            margin-left: 5rem;
+            margin-top: 1rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .subMainContainer {
+                flex-direction: column-reverse;
+            }
+
+            .subMainContainer__img {
+                margin-left: -6rem;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .subMainContainer__img {
+                width: 200;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <img src="./BG.png" > -->
+    <div class="mainContainer">
+        <div class="subMainContainer">
+            <div class="subMainContainer1">
+                <div class="form-box">
+                    <div class="button-box">
+                        <div id="btn">
+                            <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                            <button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+                        </div>
+                        <!-- <img src="./Tech Life - Communication.png" alt="CommunityImage"> -->
+                        <form id="signUp" class="input-group">
+
+                            <input type="text" class="input-field" placeholder="Full Name" required>
+                            <input type="text" class="input-field" placeholder="User Id" required>
+                            <input type="email" class="input-field" placeholder="Enter Email" required>
+                            <input type="password" class="input-field" placeholder="Enter Password" required>
+                            <div class="submitSignUp">
+                                <p><button type="submit" class="submit-btn">Sign Up</button></p>
+                            </div>
+                            <img class="sideImg" src="./Happy Bunch - Desk.png" width="250" height="250">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="subMainContainer2">
+                <img class="subMainContainer__img" src="./Humaaans - 3 Characters.png" alt="CommunityImage">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "-50px";
+            z.style.left = "110px";
+        }
+
+        // function register() {
+        //     x.style.left = "50px";
+        //     y.style.left = "450px";
+        //     z.style.left = "0";
+        // }
+    </script>
+
+</body>
+
+</html>
