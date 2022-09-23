@@ -41,3 +41,6 @@ def Register(request):
     else:
         context['no_record']=int(0)
     return render(request,'LoginSignUp/signUp.html',context=context)
+
+def Chat(request):
+    return render(request,'Chat/chat.html')

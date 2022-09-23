@@ -17,3 +17,7 @@ class Profile(models.Model):
     pw=models.CharField(max_length=16,blank=False,default='djangotest')
     email=models.EmailField(max_length=254,default="xyz")
     token=models.IntegerField(null=True,blank=True)
+
+class Community(models.Model):
+    cName=models.CharField(max_length=50,blank=True,null=True)
+    

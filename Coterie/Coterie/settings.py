@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'chat.apps.ChatConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,8 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'login',
+    'channels',
 ]
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -68,7 +76,7 @@ TEMPLATES = [
         },
     },
 ]
-
+ASGI_APPLICATION='Coterie.asgi.application'
 WSGI_APPLICATION = 'Coterie.wsgi.application'
 
 
