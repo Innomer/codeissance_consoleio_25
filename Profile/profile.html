@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="mainContainer">
+        <div class="leftcomp">
+            <div class="tp"></div>
+            <img src="./Kreena10.jpg" class="user_photo" alt="User Image">
+            <box-icon type='logo' name='facebook-square'></box-icon>
+            <box-icon type='solid' name='edit'></box-icon>
+            <form name="profile_form">
+                {$ csrf_token %}
+                <div class="profileDetails">
+                    <label for="About">About</label>
+                    <textarea id="About"></textarea>
+                    <div class="mainbox">
+                        <div class="box1">
+                            <input name="Username" id="Username" class="profileDetailsTextL" type="text" placeholder="Username">
+                            <input name="fname" id="Name" class="profileDetailsTextL" type="text" placeholder="Name">
+                            <input name="Edu" id="Education" class="profileDetailsTextL" type="text" placeholder="Education">
+                        </div>
+                        <div class="box2">
+                            <input name="Date" id="Bday" class="profileDetailsTextR" type="date" placeholder="Bday">
+                            <input name="City" id="City" class="profileDetailsTextR" type="text" placeholder="City">
+                            <input name="Country" id="Country" class="profileDetailsTextR" type="text" placeholder="Country">
+                        </div>
+                    </div>
+                    
+                    <label class="c" for="Career">Career</label>
+                    <input name="Career" id="Career" class="profileDetailsText" type="text">
+                    <label for="Interest">Interest</label>
+                    <input name="Interest" id="Interest" class="profileDetailsText" type="text">
+                    <label for="Community ">Community </label>
+                    <input name="Community" id="CommunityMember" class="profileDetailsText" type="text">
+                </div>
+                <button class="profile_submit" type="submit">Save Changes</button>
+            </form>
+        </div>
+        <div class="rightcomp">
+            <div class="Rbox_main">
+                <div class="Rbox">
+                    <img class="userImg" src="./Kreena10.jpg">
+                    <div class="Rbox_text">
+                        <h3><span class="t1">Kreena Shah</span></h3>
+                        <p  class="t2">Computer Engineering Student</p>
+                    </div>
+                </div>
+                <div class="Rbtn">
+                    <button class="Rmess" type="submit"><img class="RmessImg"src="./telegram.svg" width="20px"></i>&nbsp;Message</button>
+                </div>
+            </div>
+
+            <div class="Rbox_main">
+                <div class="Rbox">
+                    <img class="userImg" src="./Kreena10.jpg">
+                    <div class="Rbox_text">
+                        <h3><span class="t1">Kreena Shah</span></h3>
+                        <p  class="t2">Computer Engineering Student</p>
+                    </div>
+                </div>
+                <div class="Rbtn">
+                    <button class="Rmess" type="submit"><img class="RmessImg"src="./telegram.svg" width="20px"></i>&nbsp;Message</button>
+                </div>
+            </div>
+
+            <div class="Rbox_main">
+                <div class="Rbox">
+                    <img class="userImg" src="./Kreena10.jpg">
+                    <div class="Rbox_text">
+                        <h3><span class="t1">Kreena Shah</span></h3>
+                        <p  class="t2">Computer Engineering Student</p>
+                    </div>
+                </div>
+                <div class="Rbtn">
+                    <button class="Rmess" type="submit"><img class="RmessImg"src="./telegram.svg" width="20px"></i>&nbsp;Message</button>
+                </div>
+            </div>
+
+            <div class="Rbox_main">
+                <div class="Rbox">
+                    <img class="userImg" src="./Kreena10.jpg">
+                    <div class="Rbox_text">
+                        <h3><span class="t1">Kreena Shah</span></h3>
+                        <p  class="t2">Computer Engineering Student</p>
+                    </div>
+                </div>
+                <div class="Rbtn">
+                    <button class="Rmess" type="submit"><img class="RmessImg"src="./telegram.svg" width="20px"></i>&nbsp;Message</button>
+                </div>
+            </div>
+
+            <div class="Rbox_main">
+                <div class="Rbox">
+                    <img class="userImg" src="./Kreena10.jpg">
+                    <div class="Rbox_text">
+                        <h3><span class="t1">Kreena Shah</span></h3>
+                        <p  class="t2">Computer Engineering Student</p>
+                    </div>
+                </div>
+                <div class="Rbtn">
+                    <button class="Rmess" type="submit"><img class="RmessImg"src="./telegram.svg" width="20px"></i>&nbsp;Message</button>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+</html>
