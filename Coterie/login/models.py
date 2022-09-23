@@ -20,4 +20,6 @@ class Profile(models.Model):
 
 class Community(models.Model):
     cName=models.CharField(max_length=50,blank=True,null=True)
+    noMem=models.IntegerField(null=True)
+    
     

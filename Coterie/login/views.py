@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Profile
 from random import randint
 from django.shortcuts import render,redirect
+import json
 # Create your views here.
 
 from django.forms.models import model_to_dict
@@ -63,27 +64,28 @@ def Prof(request,id):
         career=request.POST.get("Career")
         interests=request.POST.get("Interest")
         pp=request.POST.get("img")
-        if pp:
-            pp='/'+pp
-        if interests:
-            interests=enumerate(interests,1)
-        community=request.POST.get("Community")
-        if community:
-            community=enumerate(community,1)
-        if id:
-            p=Profile.objects.filter(token=id)
-            p.username=username
-            p.fullname=fName
-            p.ed=ed
-            p.abt=abt
-            p.bday=dt
-            p.city=city
-            p.country=country
-            p.career=career
-            p.interest=interests
-            p.communities=community
-            p.pp=pp
-            info["ppp"]=pp
-            p.update()
-        print(info)
+        if dt:
+            if pp:
+                pp='/'+pp
+            if interests:
+                interests=enumerate(interests,1)
+            community=request.POST.get("Community")
+            if community:
+                community=enumerate(community,1)
+            if id:
+                p=Profile.objects.filter(token=id).first()
+                p.username=username
+                p.fullname=fName
+                p.ed=ed
+                p.abt=abt
+                p.bday=dt
+                p.city=city
+                p.country=country
+                p.career=career
+                p.interest=interests
+                p.communities=community
+                p.pp=pp
+                info["ppp"]=pp
+                p.save()
+            print(info)
     return render(request,'Profile/profile.html',{'info':info})
