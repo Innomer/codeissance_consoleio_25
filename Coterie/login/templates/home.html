@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSSEC</title>
-    <link rel="stylesheet" href="{% url 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
+    <title>Home </title>
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
@@ -151,15 +153,15 @@
                     <li class="nav-item">
                         <a class="nav-link text-white px-4" href="#">Messaging</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link text-white px-4" href="#">Notifications</a>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
         </div>
-        <button type="button" class="btn btn-light login mx-3">Sign Up</button>
-        <button type="button" class="btn btn-light login mx-3">Login</button>
+        <button type="button" class="btn btn-light login mx-3" onclick="location.href='/register'">Sign Up</button>
+        <button type="button" class="btn btn-light login mx-3" onclick="location.href='/login'">Login</button>
     </nav>
 
     <div class="home container-fluid-md ">
@@ -172,7 +174,7 @@
                     platform. Sell courses, charge subscriptions, live stream and so much more. All without any social
                     media limitations.
                 </p>
-                <a class="btn btn-primary w-50 mb-5" href="#" role="button">Get Started</a>
+                <a class="btn btn-primary w-50 mb-5" href="/register" role="button">Get Started</a>
             </div>
             <div class="himg col-12 col-md-6  w-45 ">
                 <img src="{% static '/images/meetup.png' %}" class="img-fluid " alt="meetup">
@@ -227,7 +229,7 @@
     </div>
 
 
-    <script src="{% staitc 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
 </body>
 
 </html>

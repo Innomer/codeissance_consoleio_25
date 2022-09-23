@@ -7,7 +7,7 @@ class Profile(models.Model):
     fullname=models.CharField(max_length=50,blank=True)
     ed=models.CharField(max_length=40,blank=True,null=True)
     abt=models.TextField(max_length=200,blank=True,null=True)
-    bday=models.DateField(null=True)
+    bday=models.CharField(max_length=10,null=True,blank=True)
     city=models.CharField(max_length=20,blank=True,null=True)
     country=models.CharField(max_length=20,blank=True,null=True)
     career=models.CharField(max_length=50,blank=True,null=True)

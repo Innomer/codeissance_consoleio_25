@@ -1,17 +1,16 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+    
+    <head>
+        <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
     <!-- <link rel="stylesheet" href="profile.css"> -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    
     <style>
         * {
             margin: 1rem 0 0 0;
@@ -26,7 +25,7 @@
             justify-content: center;
             gap: 15px;
         }
-
+        
         .leftcomp {
             grid-template-columns: 3000px 200px;
             grid-template-rows: 200px 200px;
@@ -37,7 +36,7 @@
             /* border: 5px groove #210f6d; */
             border-radius: 1rem;
         }
-
+        
         .tp {
             background-color: #210f6d;
             padding: 5rem;
@@ -45,7 +44,7 @@
             margin: 0;
             border-radius: 0.5rem;
         }
-
+        
         .rightcomp {
             grid-template-columns: 800px 200px;
             grid-template-rows: 200px 200px;
@@ -56,7 +55,7 @@
             /* border-style: #210f6d; */
             border: 4px solid #210f6d;
         }
-
+        
         .user_photo {
             width: 11rem;
             height: 11rem;
@@ -65,16 +64,16 @@
             margin-left: 3rem;
             border-style: groove;
             box-shadow: 1rem 1rem 1rem -0.1rem rgba(0, 0, 0, 0.15),
-                -0.2rem -0.2rem 1rem -0.1rem rgba(255, 255, 255, 0.7);
+            -0.2rem -0.2rem 1rem -0.1rem rgba(255, 255, 255, 0.7);
         }
-
+        
         .profileDetails {
             display: flex;
             flex-direction: column;
             margin: 0 1.5rem;
-
+            
         }
-
+        
         #About {
             /* border-radius: 0.7rem; */
             border-style: none;
@@ -82,7 +81,7 @@
             border-bottom-style: groove;
             margin-top: 0;
         }
-
+        
         .profileDetailsTextL,
         .profileDetailsTextR {
             /* border-radius: 0.5rem; */
@@ -92,7 +91,7 @@
             border-bottom-style: groove;
             width: 15rem;
         }
-
+        
         .profileDetailsText {
             /* border-radius: 0.5rem; */
             /* padding: 0.3rem 0; */
@@ -102,32 +101,32 @@
             /* width: 15rem; */
             margin: 0;
         }
-
+        
         .c {
             margin-top: 2rem;
         }
-
+        
         .mainbox {
             display: flex;
             margin-top: 0;
             /* margin-left: 5rem; */
-
+            
         }
-
+        
         .box2 {
             margin-left: 20rem;
         }
-
+        
         #CommunityMember {
             margin-bottom: 1rem;
         }
-
+        
         .rightcomp {
             display: grid;
             grid-template-rows: 150px 150px 150px;
             grid-template-columns: 285px;
         }
-
+        
         .Rbox_main {
             margin-left: 1rem;
             /* background-color: rgb(205, 143, 143); */
@@ -136,37 +135,37 @@
             /* background-color: #fff; */
             border-radius: 0.5rem;
         }
-
+        
         .Rbox {
             margin-top: 0;
             width: 265px;
             display: flex;
             justify-content: flex-start;
         }
-
+        
         .userImg {
             margin-left: 0.8rem;
             width: 60px;
             height: 60px;
             border-radius: 50%;
         }
-
+        
         .Rbox_text {
             margin-top: 0.3rem;
             margin-left: 0.5rem;
             display: block;
         }
-
+        
         .t2 {
             margin: 0;
         }
-
+        
         .Rbtn {
             margin: 0;
             margin-left: 5.5rem;
-
+            
         }
-
+        
         .Rmess {
             /* padding: 0.5rem; */
             padding-bottom: 0.5rem;
@@ -175,21 +174,20 @@
             width: 7rem;
             margin-top: 0.5rem;
         }
-
+        
         .RmessImg {
             margin: 0;
             margin-top: 0.5rem;
         }
-
+        
         .profile_submit {
             padding: 0.5rem;
             margin-left: 1.6rem;
             border-radius: 1rem;
             border: none;
         }
-    </style>
+        </style>
 </head>
-
 <body>
     <div class="mainContainer">
         <div class="leftcomp">
@@ -238,75 +236,45 @@
         <div class="rightcomp">
             <div class="Rbox_main">
                 <div class="Rbox">
-                    <img class="userImg" src="{% static '/Kreena10.jpg' %}">
+                    <img class="userImg" src="{% static 'Kreena10.jpg' %}">
                     <div class="Rbox_text">
                         <h3><span class="t1">Kreena Shah</span></h3>
                         <p class="t2">Computer Engineering Student</p>
                     </div>
                 </div>
                 <div class="Rbtn">
-                    <button class="Rmess" type="submit"><img class="RmessImg" src="{% static '/telegram.svg' %}"
+                    <button class="Rmess" type="submit" onclick="location.href='/chat/{{info.token}}'"><img class="RmessImg" src="{% static '/telegram.svg' %}"
                             width="20px"></i>&nbsp;Message</button>
                 </div>
             </div>
 
             <div class="Rbox_main">
                 <div class="Rbox">
-                    <img class="userImg" src="{% static '/Kreena10.jpg' %}">
+                    <img class="userImg" src="{% static '/Humaaans - 3 Characters.png' %}">
                     <div class="Rbox_text">
-                        <h3><span class="t1">Kreena Shah</span></h3>
-                        <p class="t2">Computer Engineering Student</p>
+                        <h3><span class="t1">Hemant</span></h3>
+                        <p class="t2">Engineering Student</p>
                     </div>
                 </div>
                 <div class="Rbtn">
-                    <button class="Rmess" type="submit"><img class="RmessImg" src="{% static '/telegram.svg' %}"
+                    <button class="Rmess" type="submit" onclick="location.href='/chat/{{info.token}}'"><img class="RmessImg" src="{% static '/telegram.svg' %}"
                             width="20px"></i>&nbsp;Message</button>
                 </div>
             </div>
 
             <div class="Rbox_main">
                 <div class="Rbox">
-                    <img class="userImg" src="{% static '/Kreena10.jpg' %}">
+                    <img class="userImg" src="{% static '/Humaaans - 3 Characters.png' %}">
                     <div class="Rbox_text">
-                        <h3><span class="t1">Kreena Shah</span></h3>
+                        <h3><span class="t1">Jigar</span></h3>
                         <p class="t2">Computer Engineering Student</p>
                     </div>
                 </div>
                 <div class="Rbtn">
-                    <button class="Rmess" type="submit"><img class="RmessImg" src="./telegram.svg"
+                    <button class="Rmess" type="submit" onclick="location.href='/chat/{{info.token}}'"><img class="RmessImg" src="{% static '/telegram.svg' %}"
                             width="20px"></i>&nbsp;Message</button>
                 </div>
             </div>
-
-            <div class="Rbox_main">
-                <div class="Rbox">
-                    <img class="userImg" src="./Kreena10.jpg">
-                    <div class="Rbox_text">
-                        <h3><span class="t1">Kreena Shah</span></h3>
-                        <p class="t2">Computer Engineering Student</p>
-                    </div>
-                </div>
-                <div class="Rbtn">
-                    <button class="Rmess" type="submit"><img class="RmessImg" src="./telegram.svg"
-                            width="20px"></i>&nbsp;Message</button>
-                </div>
-            </div>
-
-            <div class="Rbox_main">
-                <div class="Rbox">
-                    <img class="userImg" src="./Kreena10.jpg">
-                    <div class="Rbox_text">
-                        <h3><span class="t1">Kreena Shah</span></h3>
-                        <p class="t2">Computer Engineering Student</p>
-                    </div>
-                </div>
-                <div class="Rbtn">
-                    <button class="Rmess" type="submit"><img class="RmessImg" src="./telegram.svg"
-                            width="20px"></i>&nbsp;Message</button>
-                </div>
-            </div>
-
-
         </div>
     </div>
 </body>
