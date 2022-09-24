@@ -10,27 +10,18 @@
     <title>Messaging</title>
     <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
     <style>
-        :root {
-            --vdpurple: #210f6d;
-            --dpurple: rgb(185, 149, 216);
-            --lipurple: rgb(88, 68, 221);
-            --vlipurple: #c4ddf3;
-        }
-        
         .msgs {
             width: 60%;
             /* display: inline-block;
             height: 100%; */
             position: relative;
             left: 40%;
-            
         }
 
         img {
             position: relative;
             left: 50%;
             padding: 0px 7px;
-            
         }
 
         .userpic {
@@ -59,94 +50,172 @@
 
         #message-send-button{
             width: 30%;
-            color: white;
         }
         
         #msg-container{
             width: 50px;
-            /* background-color: var(--vdpurple); */
         }
         .msg-hist{
             display: inline-block;
             height: 200px;
             display: flex;
             flex-direction: column;
-            border: 2px solid var(--vdpurple);
-
         }
-        .msgs, .personal-msg, .input-group, .col button{
+
+        /* navbar */
+        :root {
+            --vdpurple: #210f6d;
+            --dpurple: rgb(185, 149, 216);
+            --lipurple: rgb(88, 68, 221);
+            --vlipurple: #c4ddf3;
+        }
+
+        body {
+            color: white;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .navbar {
             background-color: var(--vdpurple);
         }
-        .headtxt img, .personal-msg img{
-            filter: invert();
-        }
-        
-        #message-send-button:hover{
-            border: 2px solid var(--vdpurple);
-            color: var(--dpurple);
+
+        .home h1,p{
+            font-family: 'Raleway', sans-serif;
         }
 
+        .row {
+            background-color: var(--vdpurple);
+            height: 80%;
+            padding: 50px;
+            line-height: 150%;
+            /* height: 80%; */
+
+        }
+
+        .col {
+            position: relative;
+            top: 50px;
+        }
+
+        .btn {
+            background-color: var(--dpurple);
+        }
+
+
+        .himg {
+            /* position: relative; */
+            /* left: 10px; */
+            display: flex;
+            justify-content: center;
+            size: 100%;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .container-fluid img {
+            width: 80px;
+        }
+
+        .info p {
+            line-height: 150%;
+        }
+
+        .navbar-brand {
+            position: relative;
+            right: 19px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .login {
+            position: relative;
+            right: 6%;
+            width: 10%;
+            color: white;
+        }
         
-        
-        
-    </style>    
+    </style>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <img src="./images/logo.png" class="img-fluid " alt="logo">
+            <a class="navbar-brand text-white " href="#">Coterie</a>
+            <button class="navbar-toggler style='filter:invert(1);' type=" button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white px-4" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#">My Network</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#">Messaging</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#">Notifications</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <button type="button" class="btn btn-light login mx-3">Sign Up</button>
+        <button type="button" class="btn btn-light login mx-3">Login</button>
+    </nav>
+
 
     <div class="container overflow-hidden m-5 ">
         <div class="row gx-5">
             <div class="col  ">
-                <div class="msgs p-3 border headtxt">
-                    <span class="fw-bold text-white">Messaging</span>
+                <div class="msgs p-3 border bg-light ">
+                    <span class="fw-bold">Messaging</span>
                     <img src="{% static '/more.svg' %}" alt="more">
                     <img src="{% static '/edit.svg' %}" alt="edit">
 
                 </div>
-                <div class="msgs p-3 border">
-                    <form class="d-flex" method="POST">
+                <div class="msgs p-3 border bg-light ">
+                    <form class="d-flex">
                         {% csrf_token %}
                         <input name="searchQuery" class="form-control me-2" type="search" placeholder="Search messages"
                             aria-label="Search">
-                        <input class="btn btn-outline-light" type="submit" value="Search">
+                        <input class="btn btn-outline-success" type="submit" value="Search">
                     </form>
                 </div>
 
-                <div class="msgs p-3 border">
-                    {% if userActive %}
-                    {% for user in lst %}
-                    <img src="{% static '/user1.png' %}" class="userpic rounded-circle border border-1 " alt="user1">
-                    <span class="h6 text-white" id="username">{{user.username}}</span><br><br>
-                    {% endfor %}
-                    {% endif %}
+                <div class="msgs p-3 border bg-light ">
+                    <img src="{% static '/user1.png' %}" class="userpic rounded-circle " alt="user1">
+                    <span class="h6" id="username">Mann Bhanushali</span>
                 </div>
 
             </div>
             <div class="col" id="msg-container">
-                {% if u1 %}
-                <div class="personal-msg p-3  text-white"><span id="username">{{u1.username}}</span>
+                <div class="personal-msg p-3 border bg-light"><span id="username">Mann Bhanushali</span>
                     <img src="{% static '/more.svg' %}" alt="more">
                     <img src="{% static '/video.svg' %}" alt="video">
                 </div>
-                {% endif %}
                 <div class="container-lg  msg-hist" id="message-parent">
                 </div>
                 
-                <div class="input-group mb-3  p-3 ">
+                <div class="input-group mb-3  p-3 border">
                     <input type="text" class="form-control " placeholder="Write a message" aria-label="Recipient's username" aria-describedby="button-addon2" id="message-box">
                 </div>
 
-                <button type="submit" class=" form-control me-2 btn " id="message-send-button">Send</button>
+                <button type="submit" class="btn btn-light form-control me-2" id="message-send-button">Light</button>
                 
             </div>
         </div>
     </div>
 
-   
-
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
     <script>
-        const chatSocket=new WebSocket("ws://"+window.location.host+'/');
+        const chatSocket=new WebSocket("ws://"+window.location.host+"/");
         chatSocket.onopen=function (e){
             console.log('The connection is established');
         };
@@ -161,7 +230,7 @@
         };
         document.querySelector('#message-send-button').onclick=function (e) {
             var messageInput=document.querySelector("#message-box").value;
-            chatSocket.send(JSON.stringify({message:messageInput,username:"{{sname.username}}"}));
+            chatSocket.send(JSON.stringify({message:messageInput,username:"{{request.user.username}}"}));
         };
         chatSocket.onmessage=function(e){
             const data=JSON.parse(e.data);

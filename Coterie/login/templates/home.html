@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home </title>
-    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
+    <title>TSSEC</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <style>
         :root {
             --vdpurple: #210f6d;
@@ -29,7 +27,8 @@
             background-color: var(--vdpurple);
         }
 
-        .home h1,p{
+        .home h1,
+        p {
             font-family: 'Raleway', sans-serif;
         }
 
@@ -90,10 +89,10 @@
             background-color: #87C4BA;
             padding: 2% 0%;
             font-family: 'Raleway', sans-serif;
-            
+
         }
 
-        
+
 
         .customers img {
             width: 5%;
@@ -119,7 +118,7 @@
             margin: 1%;
         }
 
-        .card h5{
+        .card h5 {
             font-family: 'Raleway', sans-serif;
         }
 
@@ -129,13 +128,22 @@
             height: 106px;
             margin-left: 20%;
         }
+
+        /* footer */
+        .footer{
+            background-color: #87C4BA;
+        }
+        .footer a{
+            margin: 0px 4px;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
-            <img src="{% static '/images/logo.png' %}" class="img-fluid " alt="logo">
+            <img src="./images/logo.png" class="img-fluid " alt="logo">
             <a class="navbar-brand text-white " href="#">Coterie</a>
             <button class="navbar-toggler style='filter:invert(1);' type=" button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -151,17 +159,17 @@
                         <a class="nav-link text-white px-4" href="#">My Network</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white px-4" href="/chat/1   ">Messaging</a>
+                        <a class="nav-link text-white px-4" href="#">Messaging</a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link text-white px-4" href="#">Notifications</a>
-                    </li> -->
+                    </li>
 
                 </ul>
             </div>
         </div>
-        <button type="button" class="btn btn-light login mx-3" onclick="location.href='/register'">Sign Up</button>
-        <button type="button" class="btn btn-light login mx-3" onclick="location.href='/login'">Login</button>
+        <button type="button" class="btn btn-light login mx-3">Sign Up</button>
+        <button type="button" class="btn btn-light login mx-3">Login</button>
     </nav>
 
     <div class="home container-fluid-md ">
@@ -174,10 +182,10 @@
                     platform. Sell courses, charge subscriptions, live stream and so much more. All without any social
                     media limitations.
                 </p>
-                <a class="btn btn-primary w-50 mb-5" href="/register" role="button">Get Started</a>
+                <a class="btn btn-primary w-50 mb-5" href="#" role="button">Get Started</a>
             </div>
             <div class="himg col-12 col-md-6  w-45 ">
-                <img src="{% static '/images/meetup.png' %}" class="img-fluid " alt="meetup">
+                <img src="./images/meetup.png" class="img-fluid " alt="meetup">
             </div>
 
         </div>
@@ -204,7 +212,7 @@
     <div class="cards h-50 container-lg-fluid ">
 
         <div class="card" style="width: 18rem;">
-            <img src="{% static '/images/purse.svg' %}" class="card-img-top" alt="...">
+            <img src="./images/purse.svg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title">Power Up Revenue</h3>
                 <p class="card-text">Generate income by selling online courses, membership subscriptions, and exclusive
@@ -212,14 +220,14 @@
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img src="{% static '/images/heart.svg' %}" class="card-img-top" alt="...">
+            <img src="./images/heart.svg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title">Grow Engangement</h3>
                 <p class="card-text">Drive more engagement than typically seen on Facebook and Instagram.</p>
             </div>
         </div>
         <div class="card" style="width: 18rem;">
-            <img src="{% static '/images/lock.svg' %}" class="card-img-top" alt="...">
+            <img src="./images/lock.svg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h3 class="card-title">Gain total control</h3>
                 <p class="card-text">Bring your community together in a safe space that you own and control.</p>
@@ -228,8 +236,22 @@
 
     </div>
 
+    <div class="d-flex flex-column mb-1 footer align-items-center">
+        <div class="p-2">
+            <a href="#">About</a>
+            <a href="#">Accessibility</a>
+            <a href="#">Help Center</a>
+            <a href="#">Get the Coterie</a>
+            <a href="#">More</a>
+        </div>
+        <div class="p-2">
+            <span>Coterie</span>
+            <span>Coterie Corportation &copy; 2022</span>
+        </div>
+    </div>
 
-    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
