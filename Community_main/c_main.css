@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainContainer {
+    display: grid;
+    grid-template-rows: 590px 540px;
+    grid-template-columns:300px 900px;
+    justify-content:center;
+    gap: 15px;
+}
+
+.leftU {
+    background-color: #c4ddf3;
+    border-radius: 1rem;
+}
+
+.leftU_img1 {
+    margin-left: 1rem;
+    margin-top: -1.5rem;
+
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(-15px,0); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+
+.leftU_img2 {
+    margin-left: 1rem;
+    margin-top: 2.5rem;
+
+    animation-name: floating1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating1 {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(15px, 0px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+.leftD {
+    background-color: #c4ddf3;
+    border-radius: 1rem;
+}
+
+.leftD_img1 {
+    width: 450px;
+    margin-top: 4rem;
+    margin-left: -4rem;
+    animation-name: floating2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating2 {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0px, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+
+.right {
+    border-radius: 1rem;
+    border: none;
+    float: left;
+}
+
+.rightText {
+    margin: 0.8rem 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-left: 15rem;
+}
+
+.rightText1 {
+    margin: 0.8rem 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-left: 18.5rem;
+}
+
+.mainContainer__ppl {
+    margin: 0 10px;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns:210px 210px 210px;
+    /* grid-template-columns: auto auto auto auto; */
+    gap: 5px 20px;
+}
+
+.mainContainer__grp {
+    margin: 2rem 0;
+    margin-left: 8rem;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns:350px 350px;
+    gap: 30px 50px;
+}
+
+.grp {
+    border-radius: 1rem;
+    border-bottom-style: groove;
+    transform: .2s;
+}
+
+.grp:hover {
+    transform: scale(0.8);
+}
+
+.grp2 {
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+.tp1 {
+    height: 80px;
+    background-color: #210f6d;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.ppl_img {
+    width:85px;
+    height: 85px;
+    border-radius: 50%;
+    margin-top: -3rem;
+    margin-left: 3.5rem;
+}
+
+.name {
+    text-align: center;
+    font-weight: 800;
+    padding-bottom: 0.1rem;
+}
+
+.edu {
+    text-align:center ;
+    font-weight: 500;
+    padding-bottom: 0.7rem;
+}
+
+.followers {
+    text-align: center;
+}
+
+.connect {
+    margin-bottom: 1rem;
+    margin-top: 0.7rem;
+    margin-left: 4.5rem;
+    padding: 0.5rem;
+    border: 2px solid #210f6d;
+    border-radius: 2rem;
+    background-color: transparent;
+}
+
+.connect:hover {
+    background-color: #210f6d;
+    color: #fff;
+}
+
+.grp_img1 {
+    width: 350px;
+    height: 80px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.grp_img2 {
+    width: 130px;
+    height: 130px;
+    margin-left: 0.4rem;
+    margin-top: -4.2rem;
+}
+
+.grp_connect {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 50%;
+    border: none;
+    margin-left: 25%;
+    border-radius: 2rem;
+    /* background-color: #210f6d;
+    color: #fff; */
+    border: 2px solid #210f6d;
+    border-radius: 2rem;
+    background-color: transparent;
+}
+
+.grp_connect:hover {
+    background-color: #210f6d;
+    color: #fff;
+}
+
+.grp_name {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.grp_followers {
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.grp_edu {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+}
