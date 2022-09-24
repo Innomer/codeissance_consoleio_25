@@ -1,3 +1,79 @@
+/* navbar */
+
+:root {
+    --vdpurple: #210f6d;
+    --dpurple: rgb(185, 149, 216);
+    --lipurple: rgb(88, 68, 221);
+    --vlipurple: #c4ddf3;
+}
+
+body {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+    background-color: var(--vdpurple);
+}
+
+.home h1,p{
+    font-family: 'Raleway', sans-serif;
+}
+
+.row {
+    background-color: var(--vdpurple);
+    height: 80%;
+    padding: 50px;
+    line-height: 150%;
+    /* height: 80%; */
+
+}
+
+.col {
+    position: relative;
+    top: 50px;
+}
+
+.btn {
+    background-color: var(--dpurple);
+}
+
+
+.himg {
+    /* position: relative; */
+    /* left: 10px; */
+    display: flex;
+    justify-content: center;
+    size: 100%;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.container-fluid img {
+    width: 80px;
+}
+
+.info p {
+    line-height: 150%;
+}
+
+.navbar-brand {
+    position: relative;
+    right: 19px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.login {
+    position: relative;
+    right: 6%;
+    width: 10%;
+    color: white;
+}
+
+
+
 * {
     margin: 0;
     padding: 0;
