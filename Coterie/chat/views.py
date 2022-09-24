@@ -3,32 +3,35 @@ from login.models import Profile
 
 from django.forms.models import model_to_dict
 
-# Create your views here.
+# Create your views here.            
 def chatPage(request,*args,**kwargs):
     context={}
     lst=[]
     userActive=False
     id=kwargs['id']
+    p1=[]
+    p2=[]
     p=Profile.objects.filter(token=id).first()
-    p=model_to_dict(p)
-    if p['activeChat1'] or p['activeChat2'] or p['comChat1'] or p['comChat2']:
-        userActive=True
-        p1=Profile.objects.filter(token=p['activeChat1']).first()
-        if p1:
-            p1=model_to_dict(p1)
-            lst.append(p1)
-        p2=Profile.objects.filter(token=p['activeChat2']).first()
-        if p2:
-            p2=model_to_dict(p2)
-            lst.append(p2)
-        c1=Profile.objects.filter(token=p['comChat1']).first()
-        if c1:
-            c1=model_to_dict(c1)
-            lst.append(c1)
-        c2=Profile.objects.filter(token=p['comChat2']).first()
-        if c2:
-            c2=model_to_dict(c2)
-            lst.append(c2)
+    if p:
+        p=model_to_dict(p)
+        if p['activeChat1'] or p['activeChat2'] or p['comChat1'] or p['comChat2']:
+            userActive=True
+            p1=Profile.objects.filter(token=p['activeChat1']).first()
+            if p1:
+                p1=model_to_dict(p1)
+                lst.append(p1)
+            p2=Profile.objects.filter(token=p['activeChat2']).first()
+            if p2:
+                p2=model_to_dict(p2)
+                lst.append(p2)
+            c1=Profile.objects.filter(token=p['comChat1']).first()
+            if c1:
+                c1=model_to_dict(c1)
+                lst.append(c1)
+            c2=Profile.objects.filter(token=p['comChat2']).first()
+            if c2:
+                c2=model_to_dict(c2)
+                lst.append(c2)
 
     searchQuery=request.POST.get("searchQuery")
     if searchQuery:
@@ -46,6 +49,6 @@ def chatPage(request,*args,**kwargs):
             p2.save()
             p2=model_to_dict(p2)
             p.save()
-            p=model_to_dict(p)
+            p=model_to_dict(p)  
             lst.append(p)
-    return render(request,'Chat/chat.html',{'userActive':userActive,'lst':lst,'u1':p1,'sname':p2,'room_name':'{}n{}'.format(id,p1['token'])})
+    return render(request,'Chat/chat.html',{'userActive':userActive,'lst':lst,'u1':p1,'sname':p2})

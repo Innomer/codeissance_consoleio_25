@@ -10,18 +10,27 @@
     <title>Messaging</title>
     <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.css' %}">
     <style>
+        :root {
+            --vdpurple: #210f6d;
+            --dpurple: rgb(185, 149, 216);
+            --lipurple: rgb(88, 68, 221);
+            --vlipurple: #c4ddf3;
+        }
+        
         .msgs {
             width: 60%;
             /* display: inline-block;
             height: 100%; */
             position: relative;
             left: 40%;
+            
         }
 
         img {
             position: relative;
             left: 50%;
             padding: 0px 7px;
+            
         }
 
         .userpic {
@@ -50,17 +59,35 @@
 
         #message-send-button{
             width: 30%;
+            color: white;
         }
         
         #msg-container{
             width: 50px;
+            /* background-color: var(--vdpurple); */
         }
         .msg-hist{
             display: inline-block;
             height: 200px;
             display: flex;
             flex-direction: column;
+            border: 2px solid var(--vdpurple);
+
         }
+        .msgs, .personal-msg, .input-group, .col button{
+            background-color: var(--vdpurple);
+        }
+        .headtxt img, .personal-msg img{
+            filter: invert();
+        }
+        
+        #message-send-button:hover{
+            border: 2px solid var(--vdpurple);
+            color: var(--dpurple);
+        }
+
+        
+        
         
     </style>    
 </head>
@@ -70,26 +97,26 @@
     <div class="container overflow-hidden m-5 ">
         <div class="row gx-5">
             <div class="col  ">
-                <div class="msgs p-3 border bg-light ">
-                    <span class="fw-bold">Messaging</span>
+                <div class="msgs p-3 border headtxt">
+                    <span class="fw-bold text-white">Messaging</span>
                     <img src="{% static '/more.svg' %}" alt="more">
                     <img src="{% static '/edit.svg' %}" alt="edit">
 
                 </div>
-                <div class="msgs p-3 border bg-light ">
+                <div class="msgs p-3 border">
                     <form class="d-flex" method="POST">
                         {% csrf_token %}
                         <input name="searchQuery" class="form-control me-2" type="search" placeholder="Search messages"
                             aria-label="Search">
-                        <input class="btn btn-outline-success" type="submit" value="Search">
+                        <input class="btn btn-outline-light" type="submit" value="Search">
                     </form>
                 </div>
 
-                <div class="msgs p-3 border bg-light ">
+                <div class="msgs p-3 border">
                     {% if userActive %}
                     {% for user in lst %}
-                    <img src="{% static '/user1.png' %}" class="userpic rounded-circle " alt="user1">
-                    <span class="h6" id="username">{{user.username}}</span><br><br>
+                    <img src="{% static '/user1.png' %}" class="userpic rounded-circle border border-1 " alt="user1">
+                    <span class="h6 text-white" id="username">{{user.username}}</span><br><br>
                     {% endfor %}
                     {% endif %}
                 </div>
@@ -97,7 +124,7 @@
             </div>
             <div class="col" id="msg-container">
                 {% if u1 %}
-                <div class="personal-msg p-3 border bg-light"><span id="username">{{u1.username}}</span>
+                <div class="personal-msg p-3  text-white"><span id="username">{{u1.username}}</span>
                     <img src="{% static '/more.svg' %}" alt="more">
                     <img src="{% static '/video.svg' %}" alt="video">
                 </div>
@@ -105,19 +132,21 @@
                 <div class="container-lg  msg-hist" id="message-parent">
                 </div>
                 
-                <div class="input-group mb-3  p-3 border">
+                <div class="input-group mb-3  p-3 ">
                     <input type="text" class="form-control " placeholder="Write a message" aria-label="Recipient's username" aria-describedby="button-addon2" id="message-box">
                 </div>
 
-                <button type="submit" class="btn btn-light form-control me-2" id="message-send-button">Light</button>
+                <button type="submit" class=" form-control me-2 btn " id="message-send-button">Send</button>
                 
             </div>
         </div>
     </div>
 
+   
+
     <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.js' %}"></script>
     <script>
-        const chatSocket=new WebSocket("ws://"+window.location.host+"/chat/"+{{room_name    }}+'/');
+        const chatSocket=new WebSocket("ws://"+window.location.host+'/');
         chatSocket.onopen=function (e){
             console.log('The connection is established');
         };
